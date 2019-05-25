@@ -10,7 +10,7 @@ class TreeNode:
 
 
 class Solution:
-    def levelOrderBottom(self, root):
+    def postOrderBottom(self, root):
         """
         后序遍历 非递归
         :param root: 根节点
@@ -31,5 +31,19 @@ class Solution:
 
         list_node.reverse() # 取反
         return list_node
+
+    def postOrderBottom_re(self, root):
+        """
+        后序遍历 递归
+        :param root: 根节点
+        :return: list_node -> List
+        """
+
+        if not root:
+            return None
+        self.postOrderBottom_re(root.left)
+        self.postOrderBottom_re(root.right)
+        print(root.val)
+
 
 

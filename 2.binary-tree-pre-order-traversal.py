@@ -10,7 +10,7 @@ class TreeNode:
 
 
 class Solution:
-    def levelOrderBottom(self, root):
+    def preOrderBottom(self, root):
         """
         先序遍历
         :param root: 根节点
@@ -31,5 +31,18 @@ class Solution:
         print(list_node)
 
         return list_node
+
+    def preOrderBottom_re(self, root):
+        """
+        先序遍历 递归
+        :param root: 根节点
+        :return: list_node -> List
+        """
+
+        if not root:
+            return None
+        print(root.val)
+        self.preOrderBottom_re(root.left)
+        self.preOrderBottom_re(root.right)
 
 
